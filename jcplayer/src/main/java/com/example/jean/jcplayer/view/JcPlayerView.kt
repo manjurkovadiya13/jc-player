@@ -109,13 +109,13 @@ class JcPlayerView : LinearLayout, View.OnClickListener, SeekBar.OnSeekBarChange
         btnRepeat?.setOnClickListener(this)
         btnRepeatOne?.setOnClickListener(this)
         seekBar?.setOnSeekBarChangeListener(this)
-        pdfview?.id = R.id.pdfview
         pdfview?.setOnClickListener(pdfViewClickListener)
 
     }
 
     fun setPdfViewClickListener(listener: OnClickListener) {
         pdfViewClickListener = listener
+        pdfview?.setOnClickListener(pdfViewClickListener)
     }
     private fun setAttributes(attrs: TypedArray) {
         val defaultColor = ResourcesCompat.getColor(resources, android.R.color.black, null)
