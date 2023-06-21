@@ -2,6 +2,7 @@
 
 package com.example.jean.jcplayer.view
 
+import android.app.Dialog
 import android.content.Context
 import android.content.res.TypedArray
 import android.graphics.PorterDuff
@@ -10,6 +11,8 @@ import android.support.annotation.DrawableRes
 import android.support.v4.content.res.ResourcesCompat
 import android.util.AttributeSet
 import android.view.View
+import android.widget.Button
+import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.SeekBar
 import com.daimajia.androidanimations.library.Techniques
@@ -39,7 +42,7 @@ class JcPlayerView : LinearLayout, View.OnClickListener, SeekBar.OnSeekBarChange
         JcPlayerManager.getInstance(context).get()!!
     }
     private lateinit var imgSingerPhoto: CircleImageView
-
+    private var pdfViewClickListener: OnClickListener? = null
     val myPlaylist: List<JcAudio>
         get() = jcPlayerManager.playlist
 
@@ -106,8 +109,14 @@ class JcPlayerView : LinearLayout, View.OnClickListener, SeekBar.OnSeekBarChange
         btnRepeat?.setOnClickListener(this)
         btnRepeatOne?.setOnClickListener(this)
         seekBar?.setOnSeekBarChangeListener(this)
+        pdfview?.id = R.id.pdfview
+        pdfview?.setOnClickListener(pdfViewClickListener)
+
     }
 
+    fun setPdfViewClickListener(listener: OnClickListener) {
+        pdfViewClickListener = listener
+    }
     private fun setAttributes(attrs: TypedArray) {
         val defaultColor = ResourcesCompat.getColor(resources, android.R.color.black, null)
 
@@ -298,6 +307,7 @@ class JcPlayerView : LinearLayout, View.OnClickListener, SeekBar.OnSeekBarChange
      *
      * @param playlist List of urls strings
      */
+
     fun initAnonPlaylist(playlist: List<JcAudio>) {
         generateTitleAudio(playlist, context.getString(R.string.track_number))
         initPlaylist(playlist)
