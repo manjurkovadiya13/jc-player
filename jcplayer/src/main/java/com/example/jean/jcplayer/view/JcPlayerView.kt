@@ -654,10 +654,14 @@ class JcPlayerView : LinearLayout, View.OnClickListener, SeekBar.OnSeekBarChange
         progressBarPlayer?.makeVisible()
         btnPlay?.makeInvisible()
         btnPause?.makeInvisible()
+        pdfview?.makeInvisible()
+        imgSingerPhoto?.makeInvisible()
     }
 
     private fun dismissProgressBar() {
         progressBarPlayer?.makeInvisible()
+        pdfview?.makeVisible()
+        imgSingerPhoto?.makeVisible()
         showPauseButton()
     }
 
