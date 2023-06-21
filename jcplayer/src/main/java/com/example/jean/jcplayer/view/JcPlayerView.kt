@@ -96,7 +96,8 @@ class JcPlayerView : LinearLayout, View.OnClickListener, SeekBar.OnSeekBarChange
 
     private fun init() {
         View.inflate(context, R.layout.view_jcplayer, this)
-
+        // Initialize the imgSingerPhoto ImageView
+        imgSingerPhoto = findViewById(R.id.imgSingerPhoto)
         btnNext?.setOnClickListener(this)
         btnPrev?.setOnClickListener(this)
         btnPlay?.setOnClickListener(this)
