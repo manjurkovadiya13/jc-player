@@ -572,6 +572,10 @@ class JcPlayerView : LinearLayout, View.OnClickListener, SeekBar.OnSeekBarChange
         else if (audioTitle.contains("irfan")) {
             imgSingerPhoto.setImageResource(R.drawable.irfan_player)
         }
+        else
+        {
+            imgSingerPhoto.setImageResource(R.drawable.profile_player)
+        }
     }
 
     override fun onProgressChanged(seekBar: SeekBar, i: Int, fromUser: Boolean) {
