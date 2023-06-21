@@ -541,17 +541,16 @@ class JcPlayerView : LinearLayout, View.OnClickListener, SeekBar.OnSeekBarChange
         val duration = status.duration.toInt()
         seekBar?.post { seekBar?.max = duration }
         txtDuration?.post { txtDuration?.text = toTimeSongString(duration) }
-        // Check if the audio title contains "Nadeem Sarwar"
-        if (status.jcAudio.title.contains("Nadeem")) {
+        // Extract the audio title and convert it to lowercase for easier comparison
+        val audioTitle = status.jcAudio.title.toLowerCase()
+
+        // Check if the audio title contains "nadeem"
+        if (audioTitle.contains("nadeem")) {
             // Set the desired image for "Nadeem Sarwar"
             imgSingerPhoto.setImageResource(R.drawable.nadeem_sarwar_icon)
-        }
-        else if (status.jcAudio.title.contains("Jee"))
-        {
+        } else if (audioTitle.contains("jee")) {
             imgSingerPhoto.setImageResource(R.drawable.ali_jee_icon)
-        }
-        else if (status.jcAudio.title.contains("Farhan"))
-        {
+        } else if (audioTitle.contains("farhan")) {
             imgSingerPhoto.setImageResource(R.drawable.farhan_ali_waris_icon)
         }
     }
