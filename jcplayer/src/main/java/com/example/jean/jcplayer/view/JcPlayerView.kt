@@ -547,11 +547,11 @@ class JcPlayerView : LinearLayout, View.OnClickListener, SeekBar.OnSeekBarChange
         // Check if the audio title contains "nadeem"
         if (audioTitle.contains("nadeem")) {
             // Set the desired image for "Nadeem Sarwar"
-            imgSingerPhoto.setImageResource(R.drawable.nadeem_sarwar_icon)
+            imgSingerPhoto.setImageResource(R.drawable.nadeem_sarwar_icon_player)
         } else if (audioTitle.contains("jee")) {
-            imgSingerPhoto.setImageResource(R.drawable.ali_jee_icon)
+            imgSingerPhoto.setImageResource(R.drawable.ali_jee_icon_player)
         } else if (audioTitle.contains("farhan")) {
-            imgSingerPhoto.setImageResource(R.drawable.farhan_ali_waris_icon)
+            imgSingerPhoto.setImageResource(R.drawable.farhan_ali_waris_icon_player
         }
     }
 
