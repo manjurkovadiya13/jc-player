@@ -2,7 +2,6 @@
 
 package com.example.jean.jcplayer.view
 
-import android.app.Dialog
 import android.content.Context
 import android.content.res.TypedArray
 import android.graphics.PorterDuff
@@ -11,8 +10,6 @@ import android.support.annotation.DrawableRes
 import android.support.v4.content.res.ResourcesCompat
 import android.util.AttributeSet
 import android.view.View
-import android.widget.Button
-import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.SeekBar
 import com.daimajia.androidanimations.library.Techniques
@@ -562,6 +559,18 @@ class JcPlayerView : LinearLayout, View.OnClickListener, SeekBar.OnSeekBarChange
             imgSingerPhoto.setImageResource(R.drawable.ali_jee_icon_player)
         } else if (audioTitle.contains("farhan")) {
             imgSingerPhoto.setImageResource(R.drawable.farhan_ali_waris_icon_player)
+        }
+        else if (audioTitle.contains("khadim")) {
+            imgSingerPhoto.setImageResource(R.drawable.khadim_hussain_icon_rename)
+        }
+        else if (audioTitle.contains("shanawar")) {
+            imgSingerPhoto.setImageResource(R.drawable.alishanawar_player)
+        }
+        else if (audioTitle.contains("hasan")) {
+            imgSingerPhoto.setImageResource(R.drawable.hasanabbashamid_player)
+        }
+        else if (audioTitle.contains("irfan")) {
+            imgSingerPhoto.setImageResource(R.drawable.irfan_player)
         }
     }
 

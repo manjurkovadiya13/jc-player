@@ -75,7 +75,7 @@ class JcNotificationPlayer private constructor(private val context: Context) :
             .setSmallIcon(iconResourceResource)
             .setLargeIcon(BitmapFactory.decodeResource(context.resources, iconResourceResource))
             .setPriority(NotificationCompat.PRIORITY_DEFAULT)
-            .setContent(createNotificationPlayerView())
+            .setContent(createNotificationPlayerView()).setStyle(NotificationCompat.DecoratedCustomViewStyle())
             .setSound(null)
             .setContentIntent(
                 PendingIntent.getActivity(
