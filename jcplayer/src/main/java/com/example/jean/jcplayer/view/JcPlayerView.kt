@@ -551,7 +551,7 @@ class JcPlayerView : LinearLayout, View.OnClickListener, SeekBar.OnSeekBarChange
         } else if (audioTitle.contains("jee")) {
             imgSingerPhoto.setImageResource(R.drawable.ali_jee_icon_player)
         } else if (audioTitle.contains("farhan")) {
-            imgSingerPhoto.setImageResource(R.drawable.farhan_ali_waris_icon_player
+            imgSingerPhoto.setImageResource(R.drawable.farhan_ali_waris_icon_player)
         }
     }
 
