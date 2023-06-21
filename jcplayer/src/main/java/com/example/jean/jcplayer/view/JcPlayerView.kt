@@ -22,6 +22,7 @@ import com.example.jean.jcplayer.general.PlayerUtil.toTimeSongString
 import com.example.jean.jcplayer.general.errors.AudioListNullPointerException
 import com.example.jean.jcplayer.general.errors.OnInvalidPathListener
 import com.example.jean.jcplayer.model.JcAudio
+import de.hdodenhof.circleimageview.CircleImageView
 import kotlinx.android.synthetic.main.view_jcplayer.view.*
 
 
@@ -37,6 +38,7 @@ class JcPlayerView : LinearLayout, View.OnClickListener, SeekBar.OnSeekBarChange
     private val jcPlayerManager: JcPlayerManager by lazy {
         JcPlayerManager.getInstance(context).get()!!
     }
+    private lateinit var imgSingerPhoto: CircleImageView
 
     val myPlaylist: List<JcAudio>
         get() = jcPlayerManager.playlist
@@ -538,6 +540,11 @@ class JcPlayerView : LinearLayout, View.OnClickListener, SeekBar.OnSeekBarChange
         val duration = status.duration.toInt()
         seekBar?.post { seekBar?.max = duration }
         txtDuration?.post { txtDuration?.text = toTimeSongString(duration) }
+        // Check if the audio title contains "Nadeem Sarwar"
+        if (status.jcAudio.title.contains("Nadeem")) {
+            // Set the desired image for "Nadeem Sarwar"
+            imgSingerPhoto.setImageResource(R.drawable.ic_next)
+        }
     }
 
     override fun onProgressChanged(seekBar: SeekBar, i: Int, fromUser: Boolean) {
