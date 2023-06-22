@@ -52,7 +52,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="65dp"
-        android:src="@drawable/pdf_player"
+        android:src="@drawable/pdf_audioplayer"
         app:layout_constraintStart_toEndOf="@id/txtCurrentMusic"
         tools:visibility="visible"
         android:visibility="gone"
